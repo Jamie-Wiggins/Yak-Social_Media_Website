@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.4'
+gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -27,6 +27,31 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# bulma rails
+gem 'bulma-rails', '~> 0.8.0'
+
+#font-awesome
+gem 'font-awesome-sass', '~> 5.11.2'
+
+# simple form
+gem 'simple_form', '~> 5.0', '>= 5.0.1'
+
+#devise
+gem 'devise', '~> 4.7', '>= 4.7.1'
+
+#jquery
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+
+#popper
+gem 'popper_js', '~> 1.14', '>= 1.14.5'
+
+#faker
+gem 'faker', '~> 2.8'
+
+# color wheel
+gem 'jquery-minicolors-rails', '~> 2.2', '>= 2.2.6.2'
+
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -45,9 +70,19 @@ group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  
+  # guard
+  gem 'guard', '~> 2.16', '>= 2.16.1'
+
+  # guard livereload
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+
+  # better errors
+  gem 'better_errors', '~> 2.5', '>= 2.5.1'
+
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'spring'
+  # gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :test do
