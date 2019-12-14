@@ -45,9 +45,6 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 #popper
 gem 'popper_js', '~> 1.14', '>= 1.14.5'
 
-#faker
-gem 'faker', '~> 2.8'
-
 # color wheel
 gem 'jquery-minicolors-rails', '~> 2.2', '>= 2.2.6.2'
 
@@ -63,7 +60,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw] 
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -91,6 +90,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+
+  gem 'faker'
+  gem 'guard-rspec'
+  gem 'launchy'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

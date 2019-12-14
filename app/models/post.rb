@@ -3,6 +3,7 @@ class Post < ApplicationRecord
     belongs_to :user
     has_many :profiles, through: :user
     has_many :replies, dependent: :destroy
+    
     validates :content, presence: true
     validates :color, length: { is: 7 }
     validates_format_of :color, with: /#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/, :multiline => true

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   # Define Routes for Pages
   get '/user/:id' => 'pages#profile'
   get '/group/:id' => 'pages#group'
-  get 'search', to: "posts#search"
+  get '/search', to: "posts#search"
   get 'contact', to: "pages#contact"
   post 'request_contact', to: "pages#request_contact"
 end

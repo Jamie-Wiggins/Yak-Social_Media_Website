@@ -4,5 +4,18 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-hello_world:
-    content: "anything"
+post:
+    content: anything
+    color: blue
+    text_color: blue
+    font_type: arial
+    font_size: 12px
+    user_id: 1
+    group_id: 1
+    id: 1
+
+# post2:
+#     content: anything
+#     user_id: 1
+#     group_id: 1
+#     id: 2

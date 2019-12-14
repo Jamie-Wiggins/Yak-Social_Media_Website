@@ -1,12 +1,5 @@
 class GroupsController < ApplicationController
     before_action :set_group, only: [:show, :edit, :update, :destroy]
-    
-    # GET /groups/1
-    # GET /groups/1.json
-    def show
-      @posts = Post.where('group_id = ?', @group.id)
-      @groups = Group.all.order('created_at desc')
-    end
   
     # GET /groups/new
     def new

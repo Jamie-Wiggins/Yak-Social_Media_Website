@@ -3,21 +3,8 @@ class PostsController < ApplicationController
     before_action :find_groups, only: [:index, :show, :new, :edit]
     before_action :authenticate_user!, except: [:index, :show]
   
-    # GET /posts
-    # GET /posts.json
-    def index
-      @posts = Post.all.order("created_at desc")
-    end
-  
-  
     def search
       @posts = Post.all.where("content LIKE ?","%"+params[:q]+"%")
-    end
-  
-    # GET /posts/1
-    # GET /posts/1.json
-    def show
-      @posts = Post.all.order('created_at desc')
     end
   
     # GET /posts/new
