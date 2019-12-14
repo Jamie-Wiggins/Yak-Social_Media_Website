@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>yak</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <%= render 'shared/alert'%>
+    <%= render 'shared/header'%>
+    <section class="section" id="app">
+      <%= yield %>
+    </section>
+    <%= render 'shared/footer'%>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+
+<div class="columns">
+  <div class="column is-half is-offset-2">
+    <div id="post-new" > 
+      <%= link_to 'new post', new_post_path, remote: true %>
+    </div>
+    <div id="post-display" >
+          <%= render @posts %>
+    </div>
+  </div>
+  <div class="column is-one-quarter">
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <%= render 'shared/group' %>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

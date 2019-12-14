@@ -1,0 +1,29 @@
+<div class="columns">
+  <div class="column is-one-quarter">
+    <div class="box">
+      <article class="media">
+        <div class="media-content">
+          <h1 class="title"><%= @username %></h1>
+          <%= render 'shared/relation', :user => User.find_by_username(params[:id]) %>
+          <figure class="image is-128x128">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+          </figure>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="column is-half"> 
+    <%= render 'shared/post'%>
+  </div>
+  <div class="column is-one-quarter">
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <%= render 'shared/group' %>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+

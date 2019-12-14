@@ -1,0 +1,11 @@
+<div class="container">
+    <%= form_tag request_contact_path, mehtod: 'post' do %>
+        <%= label_tag :name, "Name:" %>
+        <%= text_field_tag :name, "" %>
+        <%= label_tag :email, "Email:" %>
+        <%= email_field_tag :email, "" %>
+        <%= label_tag :message, "Message:" %>
+        <%= text_field_tag :message, "", size: 100%>
+        <%= submit_tag "Submit"%>
+    <% end %>
+</div>
