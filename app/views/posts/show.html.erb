@@ -1,0 +1,36 @@
+<div class="columns">
+  <div class="column is-8">
+    <div class="content is-large"><%= @post.content %></div>
+    <h3 class="subtitle is-7 has-text-grey-lighter">by <%= @post.user.username %></h3>
+    <div class="level">
+      <div class="level-left"></div>
+      <div class="level-right">
+      
+        <%#
+        <% if post_author(@post) %>
+        <div class="buttons">
+            <%= link_to 'Edit Post', edit_post_path(@post), class:'button'%>
+            <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: "Delete Post?" }, class:'button' %>
+        </div>
+       <%# <% end %>
+      </div>
+    </div>
+
+    <h2 class="subtitle is-6 has-text-grey"><%= @post.replies.count %> Replies</h2>
+
+    <div id="post-replies">
+      <%= render @post.replies %>
+    </div>
+
+    <hr />
+
+    <h3 class="subtitle is-6 has-text-grey">Leave a reply</h3>
+    <% if user_signed_in? %>
+      <%= render 'replies/form' %>
+    <% else %>
+    <p>To reply you need to <%= link_to 'login', new_user_session_path %>. Don't have an account?
+      <%= link_to 'Sign up', new_user_registration_path %> for one.</p>
+    <% end %>
+
+  </div>
+</div>
