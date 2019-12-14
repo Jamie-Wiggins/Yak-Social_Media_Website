@@ -1,0 +1,20 @@
+<% @posts.each do | post |%>
+    <article class="media" style="padding: 0;">
+        <div class="media-content">
+            <div class="media-content", style="background-color: black; border-radius: 10px 10px 0px 0px; padding: 10px 10px 0px 10px; color: <%= post.text_color %>;">   
+                <p>
+                    <a href="/group/<%= Group.find(post.group_id).name %>">
+                        <%= Group.find(post.group_id).name %>
+                    </a>
+                    posted <%= time_ago_in_words(post.created_at) %> ago by
+                    <a href="/user/<%= User.find(post.user_id).username %>">
+                        <%= User.find(post.user_id).username %>
+                    </a>
+                </p>
+            </div>
+            <div class="content", style="padding: 0px 10px 10px 10px; border-radius: 0px 0px 10px 10px; background-color: <%= post.color %>; color: <%= post.text_color %>; font-size: <%= post.font_size %>; font-style: <%= post.font_type %>;">
+                <%= link_to post do %><%= post.content%><% end %>
+            </div>
+        </div>  
+    </article>
+<% end %>
