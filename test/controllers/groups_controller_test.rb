@@ -6,7 +6,7 @@ class GroupsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:user)
     sign_in @user
-    @group = groups(:group2)
+    @group = groups(:group)
   end
 
   test "should get new" do

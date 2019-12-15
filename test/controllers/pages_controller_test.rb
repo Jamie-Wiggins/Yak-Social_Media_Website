@@ -17,7 +17,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   
     test "should get profile" do
         sign_in @user
-        get ("/user/@user2.id")
+        get ("/user/"+@user.username)
         assert_response :success
     end
 

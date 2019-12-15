@@ -10,9 +10,7 @@ post:
     text_color: blue
     font_type: arial
     font_size: 12px
-    user_id: 1
-    group_id: 1
-    id: 1
+    group: group
 
 # post2:
 #     content: anything

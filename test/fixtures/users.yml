@@ -10,7 +10,6 @@ user:
   last_name: Wiggins
   username: jamie
   encrypted_password: jamie1234
-  id: 1
 
 user2:
   email: ben.wiggins@gmail.com
@@ -18,4 +17,3 @@ user2:
   last_name: Wiggins
   username: ben
   encrypted_password: ben1234
-  id: 2

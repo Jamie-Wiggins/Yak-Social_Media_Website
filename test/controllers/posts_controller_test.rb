@@ -25,9 +25,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create post" do
-      post "/groups", params: {group: {name: "jamie", admin_id: @user.id, id: 1}}
       assert_difference('Post.count') do
-      post "/posts", params: {post: {content: "hi", user_id: @user.id, group_id: 1}}
+      post "/posts", params: {post: {content: @post.content}}
     end
     assert_redirected_to root_path
   end

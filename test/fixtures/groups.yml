@@ -7,11 +7,3 @@
 group:
   name: chat
   admin_id: 
-  post_id: 1
-  id: 1
-
-group2:
-  name: xchat
-  admin_id: 1
-  post_id: 1
-  id: 2
