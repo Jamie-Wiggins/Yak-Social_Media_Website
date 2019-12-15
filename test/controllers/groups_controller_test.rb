@@ -7,11 +7,7 @@ class GroupsControllerTest < ActionDispatch::IntegrationTest
     @user = users(:user2)
     sign_in @user
     @group = groups(:groupthree)
-    # @group_image = fixture_file_upload('test/fixtures/files/banner.jpg', 'image/jpg')
-
-    # file = fixture_file_upload('/files/banner.jpg', 'banner.jpg')
-    # expect(Group.new(image: 'file', file: file)).to be_valid
-
+    @group_image = fixture_file_upload('test/fixtures/files/banner.jpg', 'image/jpg')
   end
 
   test "should get new" do
@@ -27,7 +23,7 @@ class GroupsControllerTest < ActionDispatch::IntegrationTest
   test "should create group" do
     sign_in @user
       assert_difference('Group.count') do
-      post ('/groups'), params: {group: {name: @group.name, admin_id: @user_id}}
+      post ('/groups'), params: {group: {name: @group.name, admin_id: @user_id, image: @group_image}}
     end
     assert_redirected_to root_path
   end

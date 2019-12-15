@@ -7,9 +7,8 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
       @user = users(:user)
       @user2 = users(:user2)
       sign_in @user
-      @group = groups(:grouptwo)
-
-      # @group_image = fixture_file_upload('test/fixtures/files/banner.jpg', 'image/jpg')
+      @group = groups(:groupthree)
+      @group_image = fixture_file_upload('test/fixtures/files/banner.jpg', 'image/jpg')
     end
   
     test "should get home" do
@@ -30,8 +29,10 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
       assert_nil flash[:notice]
     end
 
-    test "should get group" do    
-      get ("/group/"+@group.name)
+    test "should get group" do   
+      post ('/groups'), params: {group: {name: @group.name, admin_id: @user_id, image: @group_image}} do 
+      get ("/group/"+@group.name) 
+    end
       assert_response :success
     end
 
