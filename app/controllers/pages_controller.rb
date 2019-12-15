@@ -1,5 +1,10 @@
 class PagesController < ApplicationController
-  
+  before_action :authenticate_user!, except: [:home]
+
+    def authenticate
+      redirect_to(registration_path) unless current_user.nil?
+    end
+    
     def home
       @posts = Post.all.order('created_at desc')
       @groups = Group.all
@@ -38,10 +43,10 @@ class PagesController < ApplicationController
     def request_contact
       name = params[:name]
       email = params[:email]
-      message = params[message]
+      message = params[:message]
   
       if email.blank?
-        flash[alert]=("no email")
+        flash[:alert]=("no email")
       else
         #send email
         ContactMailer.contact_email(email, name, message).deliver_now

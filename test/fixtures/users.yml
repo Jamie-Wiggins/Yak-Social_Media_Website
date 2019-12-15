@@ -7,13 +7,13 @@
 user:
   email: jamie.wiggins@gmail.com
   first_name: jamie
-  last_name: Wiggins
+  last_name: wiggins
   username: jamie
-  encrypted_password: jamie1234
+  encrypted_password: <%= User.new.send(:password_digest, 'jamie12345')%>
 
 user2:
-  email: ben.wiggins@gmail.com
-  first_name: ben
-  last_name: Wiggins
-  username: ben
-  encrypted_password: ben1234
+  email: benwiggins@gmail.com
+  first_name: benjamie
+  last_name: wiggins
+  username: benjamie
+  encrypted_password: <%= User.new.send(:password_digest, 'jamie12345')%>

@@ -11,10 +11,9 @@ class Post < ApplicationRecord
     validates :text_color, length: { is: 7 }
     validates_format_of :text_color, with: /#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/, :multiline => true
     
-    validates_format_of :font_type, with: /^[a-zA-Z]+$/, :multiline => true
+    # validates_format_of :font_type, with: /^[a-zA-Z]+$/, :multiline => true
     
-    validates :font_size, length: { is: 2 }
-    validates_format_of :font_size, with: /^[0-9]*/, :multiline => true
+    # validates_format_of :font_size, with: /^[0-9]*/, :multiline => true
     
     validates :user_id, :group_id, presence: true   
 end

@@ -11,14 +11,9 @@ class GroupTest < ActiveSupport::TestCase
     group = Group.new
     group.name = "group"
     group.admin_id = 1
-    group.post_id = 1
 
     group.save
     assert group.valid?
-  end
-
-  test "should save group with posts" do
-    assert Group.new(name: 'group', post_id: '1', admin_id: '1').save
   end
 
   test "should save group without posts" do

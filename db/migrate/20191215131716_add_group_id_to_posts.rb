@@ -1,5 +1,5 @@
 class AddGroupIdToPosts < ActiveRecord::Migration[5.2]
   def change
-    add_column :posts, :group_id, :integer
+    add_reference :posts, :group, foreign_key: true
   end
 end

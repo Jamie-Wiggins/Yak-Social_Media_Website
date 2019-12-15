@@ -6,11 +6,12 @@
 #
 post:
     content: anything
-    color: blue
-    text_color: blue
+    color: "#ffffff"
+    text_color: "#ffffff"
     font_type: arial
-    font_size: 12px
+    font_size: 12
     group: group
+    user: user
 
 # post2:
 #     content: anything

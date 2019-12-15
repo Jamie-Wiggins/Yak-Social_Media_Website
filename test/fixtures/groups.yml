@@ -5,5 +5,8 @@
 # below each fixture, per the syntax in the comments below
 #
 group:
-  name: chat
-  admin_id: 
+  name: chatjamie
+
+grouptwo:
+  name: benchat
+  admin_id: 4

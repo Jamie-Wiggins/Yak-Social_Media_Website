@@ -48,6 +48,8 @@
                         </div>
                       </div>
 
+                      
+
 
             <div class="field is-grouped" id="profile-icon">
             <div class="navbar-item has-dropdown is-hoverable">
@@ -69,6 +71,12 @@
               <div class="navbar-item" id="guest"> 
                 <span class="control"><%= link_to "Sign up", new_user_registration_path %></span>
               </div>
+
+               <div class="navbar-item" id="guest">
+                  <%= link_to 'contact', contact_path %>
+               </div>
+
+
             </div>
           <% end %>
         </div>

@@ -21,6 +21,14 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
         assert_response :success
     end
 
+    test "should post request contact but no email" do
+      post request_contact_url
+
+      assert_response :redirect
+      assert_not_empty flash[:alert]
+      assert_nil flash[:notice]
+    end
+
     # test "should get group" do
     #     get root_path
     #     assert_response :success

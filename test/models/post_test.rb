@@ -7,10 +7,6 @@ class PostTest < ActiveSupport::TestCase
     refute post.valid?
   end
 
-  test "should save post with all correct values present" do
-    assert Post.new(content: 'content', color: '#ffffff', text_color: '#ffffff', font_type: 'arial', font_size: '24', user_id: '1', group_id: '1').save
-  end
-
   test "should not save post with no content, but all other values present" do
     assert_not Post.new(text_color: '#ffffff', font_type: 'arial', font_size: '24', user_id: '1', group_id: '1').save
   end
