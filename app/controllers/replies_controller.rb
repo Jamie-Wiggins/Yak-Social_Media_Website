@@ -18,10 +18,6 @@ class RepliesController < ApplicationController
       end
     end
   
-    def new
-    end
-  
-  
     def destroy
       @reply = @post.replies.find(params[:id])
       @reply.destroy
@@ -43,9 +39,6 @@ class RepliesController < ApplicationController
           format.json { render json: @reply.errors, status: :unprocessable_entity }
         end
       end
-    end
-  
-    def show
     end
   
     private

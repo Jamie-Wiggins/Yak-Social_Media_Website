@@ -7,13 +7,11 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :relationships
-  # , only: [:create, :destroy]
-  resources :posts do
-    resources :replies
+  resources :relationships, only: [:create, :destroy]
+  resources :posts, only: [:search, :new, :create, :destroy, :edit, :update] do
+    resources :replies, only: [:create, :destroy, :edit, :update]
   end
-
-  resources :groups
+  resources :groups, only: [:new, :create, :destroy, :edit, :update]
 
   # Define Root URL
   root 'pages#home'

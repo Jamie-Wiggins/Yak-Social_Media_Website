@@ -10,3 +10,7 @@ group:
 grouptwo:
   name: benchat
   admin_id: 4
+
+groupthree:
+  name: ximenachat
+  admin_id: 5
