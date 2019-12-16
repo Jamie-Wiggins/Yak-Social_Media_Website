@@ -1,5 +1,4 @@
-# users
-
+# users seed - creates 10 users
 10.times do |n|
     username = Faker::Name.first_name
     email = Faker::Internet.email
@@ -14,7 +13,7 @@
     puts "created user #{n+1}"
 end
 
-# groups
+# groups - makes 1 group
 j=0
 1.times do |x|
     j+= 1
@@ -25,8 +24,7 @@ j=0
     puts "created group #{j}"
 end
 
-# posts
-
+# posts - makes 10 posts
 z=0
 10.times do |x|
     z+= 1
@@ -46,6 +44,7 @@ z=0
     puts "created post #{z}"
 end
 
+# posts - makes 10 posts
 n=0
 10.times do |y|
     n+= 1
@@ -64,5 +63,3 @@ n=0
         font_size: font_size)
     puts "created post #{n}"
 end
-
-#replies

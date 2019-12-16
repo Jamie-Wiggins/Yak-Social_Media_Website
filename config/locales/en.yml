@@ -9,15 +9,16 @@ en:
     post_made: Post was successfully created.
     post_updated: Post was successfully updated.
     post_delete: Post was successfully destroyed.
-    posted: posted
-    ago_by: ago by
-    edit_post: editing post
-    by: by
-    replies: Replies
-    leave_reply: leave a reply
-    to_reply: To reply you need to 
-    no_account: Don't have an account?
-    one: for one.
+    post:
+      posted: posted
+      ago_by: ago by
+      edit_post: editing post
+      by: by
+      replies: Replies
+      leave_reply: leave a reply
+      to_reply: To reply you need to 
+      no_account: Don't have an account?
+      one: for one.
   replies:
     reply_not_saved: Reply was not saved successfully.
     reply_updated: Reply was successfully updated.
@@ -25,12 +26,24 @@ en:
     reply_edit: Editing reply
   pages:
     not_found: cannot find, sorry.
-  shared: 
-    title: Yak
-    by: by Jamie Wiggins
-    contact: please feel free to 
-    click: click me
-    modal_view: Welcome to yak where we can all yak together
-
-
+    contact:
+      title: Contact Us
+      contact_us: Complete the following form to get in touch with us.
+      name: "Name:"
+      enter_name: Enter your name
+      email: "Email:"
+      enter_email: Enter your email address
+      message: "Message:"
+      enter_message: What do you want to say?
+      submit: Contact Us
+    request_contact:
+      no_email: You must supply an email address
+      email_sent: Thank you. We will be in touch shortly.  
+  shared:
+    footer: 
+      title: Yak
+      by: by Jamie Wiggins
+      contact: please feel free to 
+      click: click me
+      modal_view: Welcome to yak where we can all yak together
 
