@@ -1,28 +1,34 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  # failure case: should not save
   test "should not save user with no values present" do
     user = User.new
     user.save
     refute user.valid?
   end
   
+  # success case: should save 
   test "should save user with all correct values present" do
     assert User.new(email: 'j@gamil.com', username: 'jamiewiggins', first_name: 'jamie', last_name: 'wiggins', password: 'jamie1234').save
   end
 
+  # failure case: should not save with an invalid email
   test "should not save user with an invalid email but all correct values present" do
     assert_not User.new(email: 'jgamil.com', username: 'jamiewiggins', first_name: 'jamie', last_name: 'wiggins', password: 'jamie1234').save
   end
 
+  # failure case: should not save with an invalid username
   test "should not save user with an invalid username but all correct values present" do
     assert_not User.new(email: 'j@gamil.com', username: 'j', first_name: 'jamie', last_name: 'wiggins', password: 'jamie1234').save
   end
 
+  # failure case: should not save with an invalid first name
   test "should not save user with an invalid first name but all correct values present" do
     assert_not User.new(email: 'j@gamil.com', username: 'jamiewiggins', first_name: 'jamie5', last_name: 'wiggins', password: 'jamie1234').save
   end
 
+  # failure case: should not save with an invalid last name
   test "should not save user with an invalid last name but all correct values present" do
     assert_not User.new(email: 'j@gamil.com', username: 'jamiewiggins', first_name: 'jamie', last_name: 'w5iggins', password: 'jamie1234').save
   end
@@ -31,22 +37,27 @@ class UserTest < ActiveSupport::TestCase
     assert_not User.new(email: 'j@gamil.com', username: 'jamiewiggins', first_name: 'jamie', last_name: 'wiggins', password: 'jamieadmin').save
   end
 
+  # failure case: should not save with no email
   test "should not save user with no email present but all correct values present" do
     assert_not User.new(username: 'jamiewiggins', first_name: 'jamie', last_name: 'wiggins', password: 'jamie1234').save
   end
 
+  # failure case: should not save with no username
   test "should not save user with no username present but all correct values present" do
     assert_not User.new(email: 'j@gamil.com', first_name: 'jamie', last_name: 'wiggins', password: 'jamie1234').save
   end
 
+  # failure case: should not save with no first name
   test "should not save user with no first name present but all correct values present" do
     assert_not User.new(email: 'j@gamil.com', username: 'jamiewiggins', last_name: 'wiggins', password: 'jamie1234').save
   end
 
+  # failure case: should not save with no last name
   test "should not save user with no last name present but all correct values present" do
     assert_not User.new(email: 'j@gamil.com', username: 'jamiewiggins', first_name: 'jamie', password: 'jamie1234').save
   end
 
+  # failure case: should not save with an password present
   test "should not save user with no password present but all correct values present" do
     assert_not User.new(email: 'j@gamil.com', username: 'jamiewiggins', first_name: 'jamie', last_name: 'wiggins').save
   end
