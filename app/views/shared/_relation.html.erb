@@ -2,13 +2,10 @@
   <%= user.followers.count %>
 <% else %>
   <% if current_user.id != user %>
-
-    <%= user.followers.count %>
-
+  <%= user.followers.count %>
     <% if !current_user.following?(user) %>
       <%= simple_form_for(current_user.active_relationships.build) do |f| %>
         <%= f.error_notification %>
-
         <div class="field">
           <div class="control">
             <%= hidden_field_tag :followed_id, user.id %>
@@ -16,19 +13,15 @@
           </div>
         </div>
       <% end %>
-
     <% else %>
-
     <%= simple_form_for(current_user.active_relationships.find_by(followed_id:  user.id), html: {method: :delete}) do |f| %>
-        <%= f.error_notification %>
-        <div class="field">
-          <div class="control">
-            <%= f.button :submit, "unfollow", class:"button is-info", style:"width: 100%;"%>
-          </div>
+      <%= f.error_notification %>
+      <div class="field">
+        <div class="control">
+          <%= f.button :submit, "unfollow", class:"button is-info", style:"width: 100%;"%>
         </div>
-      <% end %>
-
+      </div>
     <% end %>
-
+    <% end %>
   <% end %>
 <% end %>

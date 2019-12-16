@@ -1,8 +1,9 @@
+<%# send through group varible for the shared banner render %>
 <%= render 'shared/banner', :group => Group.find_by_name(params[:id])%>
 <div class="container" style="padding: 1%;">
-<div class="columns">
-  <div class="column is-half is-offset-2"> 
-    <%= render @posts %>
+  <div class="columns">
+    <div class="column is-half is-offset-2"> 
+      <%= render @posts %>
+    </div>
   </div>
-</div>
 </div>

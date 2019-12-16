@@ -15,3 +15,40 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// handles the display of new posts color for text and background
+var colorWell;
+var defaultColor = "#000000";
+var backColor;
+var defaultColor2 = "#000000";
+
+window.addEventListener("load", startup, false);
+function startup() {
+colorWell = document.querySelector("#color");
+colorWell.value = defaultColor;
+colorWell.addEventListener("input", updateFirst, false);
+colorWell.select();
+
+backColor = document.querySelector("#backColor");
+backColor.value = defaultColor2;
+backColor.addEventListener("input", updateFirst2, false);
+backColor.select();
+}
+
+// if the color selector has a color selected change the textarea background color to match this
+function updateFirst(event) {
+var textarea = document.querySelector(".textarea");
+
+    if (textarea) {
+        textarea.style.color = event.target.value;
+    }
+}
+
+// if the text color selector has a color selected change the textarea text's color to match this
+function updateFirst2(event) {
+var textarea = document.querySelector(".textarea");
+
+    if (textarea) {
+      textarea.style.backgroundColor = event.target.value;
+    }
+  }

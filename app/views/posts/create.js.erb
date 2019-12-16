@@ -1,3 +1,5 @@
+<%# removes the form %>
 $('#post-new form').remove();
+<%# shows and displays the new post made in the form %>
 $('#post-new a').show();
 $('#post-display').prepend("<%= j render @post %>");

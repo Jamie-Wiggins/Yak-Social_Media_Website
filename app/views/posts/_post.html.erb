@@ -1,3 +1,4 @@
+<%# post display taking in values post color, text color, font size and style %>
 <div class="box" style="background-color: <%= post.color %>; color: <%= post.text_color %>; font-size: <%= post.font_size %>px; font-style: <%= post.font_type %>;">
     <article class="media">
         <div class="media-content">
@@ -6,7 +7,7 @@
                     <b><a href="/group/<%= Group.find(post.group_id).name %>">
                         <%= Group.find(post.group_id).name %>
                     </a></b>
-                    posted <%= time_ago_in_words(post.created_at) %> ago by
+                    <%= t('.posted') %><%= time_ago_in_words(post.created_at) %><%= t('.ago_by')%>
                     <b><a href="/user/<%= User.find(post.user_id).username %>">
                         <%= User.find(post.user_id).username %>
                     </a></b>

@@ -18,3 +18,39 @@
     </div>
   </div>
 </nav>
+
+<script>
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navstick");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+var button = $("#button");
+var modal = document.getElementById('page-modal');
+var close = document.getElementsByClassName('modal-close')[0];
+button.click(function(){
+  modal.style.display = 'block';
+})
+
+close.onclick = function() {
+  modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+  console.log(event);
+}
+
+</script>

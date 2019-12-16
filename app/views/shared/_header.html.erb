@@ -11,46 +11,48 @@
       </div>
     </div>
     <div id="navbar" class="navbar-menu">
-        <div class="navbar-item">
-            <form class="form-inline" action="/search" >
-              <div class="field is-grouped">
-                <input class="form-control" name="q" type="text" placeholder="search" aria-label="Search">
-              </div>
-            </form>
-        </div>
+      <div class="navbar-item">
+        <form class="form-inline" action="/search" >
+          <div class="field is-grouped">
+            <%# search function %>
+            <input class="form-control" name="q" type="text" placeholder="search" aria-label="Search">
+          </div>
+        </form>
+      </div>
       <div class="field is-grouped">
+        <%# nav bar when user signed in %>
         <div class="navbar-end">
-          <% if user_signed_in? %>
-                    <div class="navbar-item">
-                        <div class="field is-grouped">
-                          <%= link_to 'new group', new_group_path %>
-                        </div>
-                      </div>
-
-            <div class="field is-grouped" id="profile-icon">
+        <% if user_signed_in? %>
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <%= link_to 'new group', new_group_path %>
+            </div>
+          </div>
+          <div class="field is-grouped" id="profile-icon">
             <div class="navbar-item has-dropdown is-hoverable">
               <%= link_to edit_user_registration_path, class: "level-item" do %>
   					    <span class="icon"><i class="fas fa-user-circle fa-3x" style="color:white;" aria-hidden="true"></i></span>
   					  <% end %>
-              <div class="navbar-dropdown is-right">
-                <a href="/user/<%= current_user.username %>"  class="navbar-item" >my profile</a>
-                <%= link_to current_user.username, edit_user_registration_path, class:"navbar-item" %>
-                <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"navbar-item" %>
-              </div>
+            <div class="navbar-dropdown is-right">
+              <a href="/user/<%= current_user.username %>"  class="navbar-item" >my profile</a>
+              <%= link_to current_user.username, edit_user_registration_path, class:"navbar-item" %>
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"navbar-item" %>
             </div>
-            </div>
-          <% else %>
-            <div class="field is-grouped">
-              <div class="navbar-item" id="guest"> 
-                <span class="control"><%= link_to "Sign In", new_user_session_path%></span>
-              </div>
-              <div class="navbar-item" id="guest"> 
-                <span class="control"><%= link_to "Sign up", new_user_registration_path %></span>
-              </div>
-            </div>
-          <% end %>
+          </div>
+        </div>
+      <% else %>
+      <%# nav bar when no user is signed in %>
+      <div class="field is-grouped">
+        <div class="navbar-item" id="guest"> 
+            <span class="control"><%= link_to "Sign In", new_user_session_path%></span>
+        </div>
+        <div class="navbar-item" id="guest"> 
+          <span class="control"><%= link_to "Sign up", new_user_registration_path %></span>
         </div>
       </div>
+      <% end %>
+      </div>
+    </div>
     </div>
   </div>
 </nav>

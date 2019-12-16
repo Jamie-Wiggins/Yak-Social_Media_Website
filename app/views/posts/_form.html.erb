@@ -1,87 +1,44 @@
 <%= simple_form_for(@post, remote: true) do |f| %>
   <%= f.error_notification %>
-
-  <div class="field">
-    <div class="control">
-      <%= f.input :content, required: true, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: "label" }%>
+    <div class="field">
+      <div class="control">
+        <%= f.input :content, required: true, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: "label" }%>
+      </div>
     </div>
-  </div>
-  
-      <div class="field">
-        <div class="control">
-         <%= f.color_field :color, id:"color" %>
-        </div>
+    <div class="field">
+      <div class="control">
+        <%= f.color_field :color, id:"color" %>
       </div>
-
-       <div class="field">
-        <div class="control">
-         <%= f.color_field :text_color, id:"backColor"%>
-        </div>
-      </div>
-
-      <div class="field">
-        <div class="control">
-           <%= f.input_field :font_type, collection: ["serif", "Arial", "Sans-Serif", "Tahoma", "Verdana"] %>
-        </div>
-      </div>
-
-      <div class="field">
-        <div class="control">
-          <%= f.input_field :font_size, collection: 10..90 %>
-        </div>
-      </div>
-
-  <div class="field">
-    <label class="label">Group</label>
-    <div class="control has-icons-left">
-      <span class="select">
-        <%= f.input_field :group_id, collection:@groups.map { |c| [c.name, c.id] }, prompt: "Select Group" %>
-      </span>
-      <span class="icon is-small is-left">
-        <i class="fa fa-tag"></i>
-      </span>
     </div>
-  </div>
-
-  <div class="field">
-    <div class="control">
-      <%= f.button :submit, class:"button is-info" %>
+    <div class="field">
+      <div class="control">
+        <%= f.color_field :text_color, id:"backColor"%>
+      </div>
     </div>
-  </div>
+    <div class="field">
+      <div class="control">
+        <%= f.input_field :font_type, collection: ["serif", "Arial", "Sans-Serif", "Tahoma", "Verdana"] %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control">
+        <%= f.input_field :font_size, collection: 10..90 %>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Group</label>
+      <div class="control has-icons-left">
+        <span class="select">
+          <%= f.input_field :group_id, collection:@groups.map { |c| [c.name, c.id] }, prompt: "Select Group" %>
+        </span>
+        <span class="icon is-small is-left">
+          <i class="fa fa-tag"></i>
+        </span>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control">
+        <%= f.button :submit, class:"button is-info" %>
+      </div>
+    </div>
 <% end %>
-                
-<script>
-  var colorWell;
-  var defaultColor = "#000000";
-  var backColor;
-  var defaultColor2 = "#000000";
-
-  window.addEventListener("load", startup, false);
-  function startup() {
-    colorWell = document.querySelector("#color");
-    colorWell.value = defaultColor;
-    colorWell.addEventListener("input", updateFirst, false);
-    colorWell.select();
-
-    backColor = document.querySelector("#backColor");
-    backColor.value = defaultColor2;
-    backColor.addEventListener("input", updateFirst2, false);
-    backColor.select();
-  }
-  
-  function updateFirst(event) {
-    var textarea = document.querySelector(".textarea");
-
-    if (textarea) {
-      textarea.style.color = event.target.value;
-    }
-  }
-
-  function updateFirst2(event) {
-    var textarea = document.querySelector(".textarea");
-
-    if (textarea) {
-      textarea.style.backgroundColor = event.target.value;
-    }
-  }
-</script>

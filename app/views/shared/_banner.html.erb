@@ -1,13 +1,14 @@
-  <section class="hero" id="bannerpos">
-    <div class="hero-body" style="height: 400px;">
-      <%= image_tag(group.image, :class => "banner") %>
-    </div>
-  </section>
-  <section class="hero">
-    <div class="hero-body">
-      <%= render 'shared/groupnav', :group => Group.find_by_name(params[:id])%>
-    </div>
-  </section>
+<%# render for the group banner including image and nav bar with admin controls %>
+<section class="hero" id="bannerpos">
+  <div class="hero-body" style="height: 400px;">
+    <%= image_tag(group.image, :class => "banner") %>
+  </div>
+</section>
+<section class="hero">
+  <div class="hero-body">
+    <%= render 'shared/groupnav', :group => Group.find_by_name(params[:id])%>
+  </div>
+</section>
 
 
 
