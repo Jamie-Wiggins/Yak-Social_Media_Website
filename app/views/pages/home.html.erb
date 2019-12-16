@@ -1,8 +1,10 @@
 
 <div class="columns">
   <div class="column is-half is-offset-2">
+    <div class="box">
     <div id="post-new" > 
       <%= link_to 'new post', new_post_path, remote: true %>
+    </div>
     </div>
     <div id="post-display" >
           <%= render @posts %>

@@ -13,8 +13,11 @@ post:
     group: group
     user: user
 
-# post2:
-#     content: anything
-#     user_id: 1
-#     group_id: 1
-#     id: 2
+noContent:
+    content: "ghg"
+    color: "#ffffff"
+    text_color: "#ffffff"
+    font_type: arial
+    font_size: 12
+    group: group
+    user: user

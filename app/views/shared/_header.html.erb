@@ -21,35 +21,11 @@
       <div class="field is-grouped">
         <div class="navbar-end">
           <% if user_signed_in? %>
-            <%# <div class="navbar-item" id="signed-in">
-              <%= link_to 'new post', new_post_path %>  
-            <%# </div> %>
-
-                      <div class="navbar-item">
-                        <div class="field is-grouped">
-                          <a class="button is-link is-medium" id="button" >new group</a>
-                          <div class="modal" id="page-modal">
-                            <div class="modal-background"></div>
-                              <div class="modal-content" style="margin: 5% 30%">
-                                    <div class="media-content">
-                                      <div class="content">
-                                        <%# <%= render '', %> 
-                                      </div>
-                                    </div>
-                              </div>
-                              <button class="modal-close is-large" aria-label="close"></button>
-                          </div>
-                        </div>
-                      </div>
-
                     <div class="navbar-item">
                         <div class="field is-grouped">
                           <%= link_to 'new group', new_group_path %>
                         </div>
                       </div>
-
-                      
-
 
             <div class="field is-grouped" id="profile-icon">
             <div class="navbar-item has-dropdown is-hoverable">
@@ -71,12 +47,6 @@
               <div class="navbar-item" id="guest"> 
                 <span class="control"><%= link_to "Sign up", new_user_registration_path %></span>
               </div>
-
-               <div class="navbar-item" id="guest">
-                  <%= link_to 'contact', contact_path %>
-               </div>
-
-
             </div>
           <% end %>
         </div>
@@ -84,39 +54,3 @@
     </div>
   </div>
 </nav>
-
-<script>
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
-
-// Get the navbar
-var navbar = document.getElementById("navstick");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-
-var button = $("#button");
-var modal = document.getElementById('page-modal');
-var close = document.getElementsByClassName('modal-close')[0];
-button.click(function(){
-  modal.style.display = 'block';
-})
-
-close.onclick = function() {
-  modal.style.display = 'none';
-}
-
-window.onclick = function(event) {
-  console.log(event);
-}
-
-</script>

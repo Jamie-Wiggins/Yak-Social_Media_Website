@@ -51,6 +51,9 @@ gem 'jquery-minicolors-rails', '~> 2.2', '>= 2.2.6.2'
 #faker 
 gem 'faker'
 
+# rails controller testing
+gem 'rails-controller-testing'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

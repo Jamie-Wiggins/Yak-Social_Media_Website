@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   
   resources :relationships, only: [:create, :destroy]
-  resources :posts, only: [:search, :new, :create, :destroy, :edit, :update] do
+  resources :posts, only: [:show, :search, :new, :create, :destroy, :edit, :update] do
     resources :replies, only: [:create, :destroy, :edit, :update]
   end
   resources :groups, only: [:new, :create, :destroy, :edit, :update]

@@ -11,18 +11,11 @@ class RelationshipsControllerTest < ActionDispatch::IntegrationTest
   #   @relationship = relationships(:relationship)
   # end
 
-  # test "should create group" do
+  # test "should create relationship" do
   #   sign_in @user
   #   sign_in @user2
   #     assert_difference('Relationship.count') do
   #     post ('/relatioships'), params: {relationship: {follower_id: @relationship.user, followed_id: @relationship.user2}}
-  #   end
-  #   assert_redirected_to root_path
-  # end
-
-  # test "should destroy group" do
-  #   assert_difference('Group.count', -1) do
-  #     delete group_url(@group)
   #   end
   #   assert_redirected_to root_path
   # end

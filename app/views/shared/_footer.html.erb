@@ -1,0 +1,65 @@
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Yak</strong> by Jamie Wiggins <i class="fas fa-copyright"></i> please feel free to <strong><%= link_to 'contact', contact_path %></strong> us
+       </p>
+           <div class="navbar-item">
+                        <div class="field is-grouped">
+                          <a id="button" > click me </a>
+                          <div class="modal" id="page-modal">
+                            <div class="modal-background"></div>
+                              <div class="modal-content" style="margin: 5% 30%">
+                                    <div class="media-content">
+                                    <div class="box">
+
+                                      <div class="content">
+                                        <p>Welcome to yak where we can all yak together</p>
+                                      </div>
+                                    </div>
+                                    </div>
+                              </div>
+                              <button class="modal-close is-large" aria-label="close"></button>
+                          </div>
+                        </div>
+                      </div>
+    
+    
+            
+  </div>
+</footer>
+
+<script>
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navstick");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+var button = $("#button");
+var modal = document.getElementById('page-modal');
+var close = document.getElementsByClassName('modal-close')[0];
+button.click(function(){
+  modal.style.display = 'block';
+})
+
+close.onclick = function() {
+  modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+  console.log(event);
+}
+
+</script>
