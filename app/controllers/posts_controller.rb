@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     # Redirects to the home page (root) upon creation
     def create
       @post = current_user.posts.build(post_params)
-      
+
       respond_to do |format|
         if @post.save
           format.html { redirect_to root_path, notice: t('.post_made') }

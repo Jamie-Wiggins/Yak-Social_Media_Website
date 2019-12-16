@@ -26,7 +26,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   # success case: should create post when user is signed in
   test "should create post" do
       assert_difference('Post.count') do
-      post "/posts", params: {post: {content: @post.content, group_id: @post.group_id, user_id: @post.user_id}}
+      post "/posts", params: {post: {content: @post.content, font_size: @post.font_size, group_id: @post.group_id, user_id: @post.user_id}}
     end
     assert_redirected_to root_path
   end

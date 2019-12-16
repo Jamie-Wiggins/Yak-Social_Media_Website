@@ -64,7 +64,7 @@ class GroupsController < ApplicationController
   
       # Groups params that can be passed; name, admin_id, user_id, and image
       def group_params
-        params.require(:group).permit(:name, :admin_id, :user, :image)
+        params.require(:group).permit(:name, :admin_id, :image)
       end
   end
   

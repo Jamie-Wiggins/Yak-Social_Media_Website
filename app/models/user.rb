@@ -39,7 +39,7 @@ class User < ApplicationRecord
   # username must be present, unique and between length of 2 to 20
   validates :username, presence: true, uniqueness: true, length: { in: 2..20 }
   # username must be of format any letters or numbers and underscores
-  validates_format_of :username, with: /^[A-Za-z0-9]+(?:[ _][A-Za-z0-9]+)*$/, :multiline => true
+  validates_format_of :username, with: /^[A-Za-z0-9]+(?:[_][A-Za-z0-9]+)*$/, :multiline => true
   # first name, last name abd pasword must all be present
   validates :first_name, :last_name, :password, presence: true
   # validates the format of first and last name, which must only contain letters

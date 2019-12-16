@@ -8,24 +8,41 @@ class RelpyTest < ActiveSupport::TestCase
     refute reply.valid?
   end
   
+  # success case: should save reply
   test "should save reply" do
     reply = Reply.new(reply: "content")
     post = Post.new(content: "more content")
-    reply.post = postassert reply.save
+
+    reply.post = post
+    reply.user = User.new(email: 'j@gamil.com', username: 'jamiewiggins', first_name: 'jamie', last_name: 'wiggins', password: 'jamie1234')
+    assert reply.save
   end
 
   # failure case: should not save with no content
-  test "should not save reply with not content but all other correct values present" do
-    assert_not Reply.new(post_id: '1', user_id: '1').save
+  test "should not save reply with no content but all other correct values present" do
+    reply = Reply.new(reply: "")
+    post = Post.new(content: "more content")
+
+    reply.post = post
+    reply.user = User.new(email: 'j@gamil.com', username: 'jamiewiggins', first_name: 'jamie', last_name: 'wiggins', password: 'jamie1234')
+    refute reply.valid?
   end
 
   # failure case: should not save with no user id
-  test "should not save reply with not user id, but all other correct values present" do
-    assert_not Reply.new(reply: 'content', post_id: '1').save
+  test "should not save reply with no user id, but all other correct values present" do
+    reply = Reply.new(reply: "content")
+    post = Post.new(content: "more content")
+
+    reply.post = post
+    refute reply.valid?
   end
 
   # failure case: should not save with no post id
-  test "should not save reply with not post id, but all other correct values present" do
-    assert_not Reply.new(reply: 'content', user_id: '1').save
+  test "should not save reply with no post id, but all other correct values present" do
+    reply = Reply.new(reply: "content")
+    post = Post.new(content: "more content")
+
+    reply.user = User.new(email: 'j@gamil.com', username: 'jamiewiggins', first_name: 'jamie', last_name: 'wiggins', password: 'jamie1234')
+    refute reply.valid?
   end
 end

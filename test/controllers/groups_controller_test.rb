@@ -40,7 +40,7 @@ class GroupsControllerTest < ActionDispatch::IntegrationTest
   # success case: a logged in user can create a group
   test "should create group" do
       assert_difference('Group.count') do
-      post "/groups", params: {group: {name: @group.name, admin_id: @user_id, post_id: @group.post_id, image: @group_image}}
+      post "/groups", params: {group: {name: "kahflkdg", admin_id: @user.id, post_id: @group.post_id, image: @group_image}}
     end
     assert_redirected_to root_path
   end

@@ -19,6 +19,8 @@ class Post < ApplicationRecord
     validates :text_color, length: { is: 7 }
     # text color must start with a # and be in the correct format for a hex color
     validates_format_of :text_color, with: /#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/, :multiline => true
+    # font size must be length 2
+    validates :font_size, length: { is: 2 }
     # font size must only consist of numbers
     validates_format_of :font_size, with: /^[0-9]*/, :multiline => true
 end
